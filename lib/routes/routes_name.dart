@@ -4,4 +4,5 @@ abstract class NameRoute {
   static const page3 = '/page3';
   static const page4 = '/page4';
   static const page5 = '/page5';
+  static const countPage = '/countPage';
 }

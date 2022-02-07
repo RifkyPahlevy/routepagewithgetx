@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:route_management_getx/pages/page2.dart';
 import 'package:route_management_getx/routes/routes_name.dart';
+import '../controller/user_controler.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    User userC = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page 1'),
@@ -17,6 +19,7 @@ class Page1 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Obx(() => Text("${userC.nama}")),
             ElevatedButton(
               onPressed: () {
                 // bisa di await, nanti page 1 minta page 2 kirim data
@@ -32,6 +35,11 @@ class Page1 extends StatelessWidget {
               },
               child: Text("Back page "),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  userC.updateNama();
+                },
+                child: Text("Update Nama")),
           ],
         ),
       ),
