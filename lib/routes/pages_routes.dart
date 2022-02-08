@@ -14,6 +14,7 @@ import 'package:get/get.dart';
 
 class AppRoutes {
   static final routePage = [
+    GetPage(name: NameRoute.home, page: () => HomePage()),
     GetPage(
         name: NameRoute.countPage,
         page: () => CountPage(),
