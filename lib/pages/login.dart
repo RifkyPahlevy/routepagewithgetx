@@ -17,11 +17,11 @@ class Login extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
         centerTitle: true,
       ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         children: [
           TextField(
             controller: loginC.emailC,
@@ -34,7 +34,7 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Obx(() => TextField(
                 controller: loginC.passC,
                 textInputAction: TextInputAction.done,
@@ -45,27 +45,27 @@ class Login extends StatelessWidget {
                       onPressed: () {
                         loginC.isHidden.toggle();
                       },
-                      icon: Icon(Icons.remove_red_eye_outlined)),
+                      icon: const Icon(Icons.remove_red_eye_outlined)),
                   labelText: 'Password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               )),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Obx(() => CheckboxListTile(
               controlAffinity: ListTileControlAffinity.leading,
               value: loginC.isRemember.value,
               onChanged: (value) {
                 loginC.isRemember.toggle();
               },
-              title: Text('Remember me'))),
-          SizedBox(height: 20),
+              title: const Text('Remember me'))),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               loginC.login();
             },
-            child: Text('Login'),
+            child: const Text('Login'),
           ),
         ],
       ),
